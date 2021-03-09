@@ -1,0 +1,21 @@
+"hello world"123
+2.14n
+2.14 n
+123
+-123
++
+>=
+void
+else
+a=b
+$ab
+ab$
+int 4n;
+int a; #a variable
+int 4n;
+int 5.12abc;
+5.12.12abc12.12; "hello world"
+$ab
+012
+
+

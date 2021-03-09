@@ -1,0 +1,38 @@
+/*
+Compilers Assignment 1
+LANGUAGE NAME: TReK
+
+Members:
+1. Kshitij Verma		2017B1A71145H
+2. Keshav Beriwal		2017B4A71301H
+3. Thejas Sasikumar		2017B4A70614H
+4. Rohan Maheshwari		2017B4A70965H
+
+*/
+
+BNF:
+<program> -> <main>
+<main>    -> main(){<stmts>}
+<stmts>	  -> <stmt>;<stmts> | <stmt>
+<stmt>    -> <condStmt> | <loopStmt> | <declStmt> | <AssignStmt>
+<condStmt>      -> <if_stmt>
+<loopStmt>      -> <for_stmt>
+<declStmt>      -> <type> <varList>
+<AssignStmt>    -> id = <aritmetic_exp> | id = string_lit
+<type>		-> int | string
+<varList>       -> <varList>,id | id
+<aritmetic_exp> -> <arithmetic_exp> (+|-|*|/) (id | int_lit) | (id | int_lit)
+<for_stmt> 	-> for(<for_cnd>){<stmts>}
+<for_cnd>	-> id = int_lit ; <cmp_stmt> ; <inc_stmt>
+<inc_stmt>	-> id++ | id-- 
+<if_stmt> 	-> if(<cmp_stmt>){<stmts>} | if(<cmp_stmt>){<stmts>}else{<stmts>}
+<cmp_stmt>	-> (id | int_lit) (> | < | == | >= | <=) (id | int_lit)
+
+Keywords = {main,void,int,float,string,input,write,for,if,else,return}
+
+Regex:
+id 		= [a-zA-Z][_a-zA-Z0-9]*
+int_lit   	= [+-]?[1-9][0-9]*
+float_lit	= [+-]?[0-9]*[.][0-9]*
+string_lit 	= ["][a-zA-Z\t\n\r\"\\]*["]
+comment		= [#][\s\S]*
